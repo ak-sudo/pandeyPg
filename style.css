@@ -31,6 +31,12 @@
     font-style: normal;
 }
 
+.navTextLight{
+  font-family: "Dangrek", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
 .loader{
     height: 100vh;
     width: 100vw;
@@ -201,18 +207,24 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    backdrop-filter: blur(10px);
     
 }
 
 .slideFeature-content{
     width: 70%;
-    color: white;
+    color: black;
     padding: 2rem;
     text-align: justify;
     font-size: 1.4rem;
     display: flex;
     overflow: hidden;
+    opacity: 1;
 
+}
+
+.slideFeature-content:nth-child(2n){
+  color: white;
 }
 
 .inactive{
