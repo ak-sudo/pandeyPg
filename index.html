@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pandeyPg - A Multi Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/pgLogo.png">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="loader">
+        <!-- <div class="left">P</div>
+        <div class="right">G</div> -->
+        <div class="container">
+            <div class="logoBg">
+            <div class="logo title"><img src="assets/pgLogo.png"></div>
+            </div>
+
+            <div class="navbar navText">
+                <div href="#"><a href="#">Home</a></div>
+                <div href="#"><a href="#">About Us</a></div>
+                <div href="#"><a href="#">Contact Us</a></div>
+                <div href="#"><a href="#">Our Team</a></div>
+                <div  href="#"><a href="#">Ratings</a></div>
+            </div>
+
+            <div class="servicesBtn">
+                <div id="rooms" class="cards"> 
+                <img class="respImg" src="assets/rooms.jpg"></img>
+                <button class="cardBtn">Rent a Room</button>
+                </div>
+                <div id="restuarant" class="cards">
+                <img class="respImg" src="assets/burgur.jpg"></img>
+
+                <button class="cardBtn">Order Food Now!</button>
+                </div>
+                <div id="store" class="cards">
+                <img class="respImg" src="assets/confectionary.jpg"></img>
+
+                <button class="cardBtn">Utility shopping and confectionary</button>
+                </div>
+            </div>
+
+            <!-- carousel -->
+        
+            <div class="slidingFeatures">
+                <div><button id="leftBtn" class="navBtn"><i class="fa-solid fa-less-than"></i></button></div>
+                
+                <div id="1" class="slideFeature-content inactive">
+                    <div>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui iure laborum sapiente in <br>
+                        <p>~ Akshat kala</p>
+                    </div>
+                </div>
+
+                <div id="2" class="slideFeature-content inactive">
+                    <div>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui iure laborum sapiente in <br>
+                        <p>~ Akshat kala</p>
+                    </div>
+                </div>
+
+                <div id="3" class="slideFeature-content inactive">
+                    <div>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui iure laborum sapiente in <br>
+                        <p>~ Akshat kala</p>
+                    </div>
+                </div>
+
+
+                <div id="4" class="slideFeature-content inactive">
+                    <div>4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui iure laborum sapiente in <br>
+                        <p>~ Akshat kala</p>
+                    </div>
+                </div>
+
+                <div><button id="rightBtn"class="navBtn"><i class="fa-solid fa-greater-than"></i></button></div>
+            
+            </div>
+
+            <!-- carousel ends here -->
+
+            <div class="footer footer-Text">
+                <div class="footer-content">
+                    <div id="row1">
+                        <div class="heading">Company</div>
+                        <li>About Us</li>
+                        <li>Our services</li>
+                        <li>Privacy Policy</li>
+                        <li>Affilliate Program </li>
+                    </div>
+                    <div id="row2">
+                        <div class="heading">Get help</div>
+                        <li>Faq</li>
+                        <li>Shipping</li>
+                        <li>Returns</li>
+                        <li> Order Status</li>
+                    </div>
+                    <div id="row3">
+                        <div class="heading">Online Shopping</div>
+                        <li>Watch</li>
+                        <li>Bag</li>
+                        <li>Shoes</li>
+                        <li>Dress</li>
+                    </div>
+                    <div class="socailLinks">
+                        <div class="heading">Follow Us</div>
+                        <button class="linkbtn"><i class="fa-brands fa-facebook-f"></i></button>
+                        <button class="linkbtn"><i class="fa-brands fa-twitter"></i></button>
+                        <button class="linkbtn"><i class="fa-brands fa-instagram"></i></button>
+                        <button class="linkbtn"><i class="fa-brands fa-linkedin-in"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+            Copyright A4Z &copy; 2025
+            </div>
+        </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+      integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
