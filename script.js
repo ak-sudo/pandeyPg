@@ -44,4 +44,21 @@ leftBtn.addEventListener("click", () => {
       );
     }
   }
-});
+})
+
+count = 1
+intervl = setInterval(() => {
+
+    if (count < carousel.length){
+        carousel[count-1].setAttribute("class", "slideFeature-content inactive");
+        carousel[count].setAttribute("class", "slideFeature-content active");
+        console.log(count);
+        count++ ;
+    }
+    else{
+        count = 1;
+        carousel[carousel.length-1].setAttribute("class", "slideFeature-content inactive");
+        carousel[count-1].setAttribute("class", "slideFeature-content active");
+    }
+
+}, 3000);
