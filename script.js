@@ -67,15 +67,15 @@ retaurantPageNavigation = document.querySelector('#restaurant');
 storePageNavigation = document.querySelector('#store');
 roomPageNavigation = document.querySelector('#room');
 
-retaurantPageNavigation.addEventListener('click', function() {
-    window.location.href = '/restaurant.html';}
-);
+// retaurantPageNavigation.addEventListener('click', function() {
+//     window.location.href = '/restaurant.html';}
+// );
 
 storePageNavigation.addEventListener('click', function() {
     window.location.href = '/store.html';}
 );
 
-roomPageNavigation.addEventListener('click', function() {
-    window.location.href = '/room.html';}
-);
+// roomPageNavigation.addEventListener('click', function() {
+//     window.location.href = '/room.html';}
+// );
 
