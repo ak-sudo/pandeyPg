@@ -156,16 +156,16 @@ for (i=0;i<buyNowBtn.length;i++){
 
 
         let billItems = [];
-        billItems.push(`<br><h3>Item Name: Amount (in ₹)<h3>`)
+        billItems.push(`\nItem Name: Amount (in ₹)\n`)
         for (let i = 0; i < title.childElementCount; i++) {
             billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
         }
-        billItems.push(`<b><br>Total Amount To Be Paid : ₹${billAmt.innerText}</b>`)
-        billItems.push(`<h4><b><i>Hope to see you soon ${username} 😊. Thanks for shopping with us!</h4></b></i>`)
+        billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+        billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
 
-        let billData = `Bill Receipt : <i>${username} </i><br>--------------------------<br>${billItems.join("<br>")}`;
+        let billData = `Bill Receipt : ${username} --------------------------${billItems.join("\n")}`;
 
-        const blob = new Blob([billData], { type: "code/HTML" });
+        const blob = new Blob([billData], { type: "plain/text" });
 
         const link = document.createElement("a");
         DownloadBtn = document.querySelector('.downloadBtn');
