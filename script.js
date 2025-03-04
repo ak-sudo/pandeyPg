@@ -52,7 +52,6 @@ intervl = setInterval(() => {
     if (count < carousel.length){
         carousel[count-1].setAttribute("class", "slideFeature-content inactive");
         carousel[count].setAttribute("class", "slideFeature-content active");
-        console.log(count);
         count++ ;
     }
     else{
@@ -63,19 +62,13 @@ intervl = setInterval(() => {
 
 }, 3000);
 
-retaurantPageNavigation = document.querySelector('#restaurant');
-storePageNavigation = document.querySelector('#store');
-roomPageNavigation = document.querySelector('#room');
+retaurantPageNavigation = document.querySelector('#restaurant button');
+storePageNavigation = document.querySelector('#store button');
+roomPageNavigation = document.querySelector('#room button');
 
-// retaurantPageNavigation.addEventListener('click', function() {
-//     window.location.href = '/restaurant.html';}
-// );
 
 storePageNavigation.addEventListener('click', function() {
     window.location.href = '/store.html';}
 );
 
-// roomPageNavigation.addEventListener('click', function() {
-//     window.location.href = '/room.html';}
-// );
 
