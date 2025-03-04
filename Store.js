@@ -18,7 +18,7 @@ get_item[0].addEventListener('click', function (){
             if (Items[i].id != 'Biscuits'){
                 Items[i].setAttribute('class','Items inactive')
             }
-        }
+        }   
         if (btnCount == 2){
             for (i=0;i<Items.length;i++){
                 Items[i].setAttribute('class','Items')
@@ -57,7 +57,7 @@ get_item[2].addEventListener('click', function (){
     btnCount++;
     for (i=0;i<Items.length;i++){
         if (btnCount == 1){
-            if (Items[i].id != 'Milk'){
+            if (Items[i].id != 'Dairy'){
                 Items[i].setAttribute('class','Items inactive')
             }
         }
@@ -154,14 +154,39 @@ for (i=0;i<buyNowBtn.length;i++){
         title.appendChild(listItemName);
         price.appendChild(listItemPrice);
 
+
+        let billItems = [];
+        billItems.push(`Item Name : Amount (in ₹)\n`)
+        for (let i = 0; i < title.childElementCount; i++) {
+            billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
+        }
+        billItems.push(`\n\nTotal Amount To Be Paid : ₹${billAmt.innerText}`)
+        billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!`)
+
+        let billData = `Bill Receipt : ${username}\n--------------------------\n${billItems.join("\n")}`;
+
+        const blob = new Blob([billData], { type: "text/plain" });
+
+        const link = document.createElement("a");
+        DownloadBtn = document.querySelector('.downloadBtn');
+
+        DownloadBtn.href = URL.createObjectURL(blob);
+        DownloadBtn.download = `${username} Bill.txt`;
+
+
         // console.log(getDiv[0].children[1].innerText); // NAME OF ITEM
         // console.log(getDiv[0].children[2].children[0].innerText); // PRICE OF ITEM  
 })
 }
 
 
+function downloadBill() {
+    link.click();
+}
+
+
 let titleol = document.querySelector('.titlelst');
-let priceol = document.querySelector('.pricelst');  
+let priceol = document.querySelector('.pricelst');
 
 titleol.addEventListener('click', function(e){
     if(e.target.nodeName == 'I'){
@@ -180,3 +205,9 @@ priceol.addEventListener('click', function(e){
         billAmt.innerText = parseInt(billAmt.innerText) - parseInt(e.target.innerText);
     };
 });
+
+username = prompt('Enter your name please : ');
+if (username == null){
+    username = 'User';
+}
+alert("Enjoy Shopping")
