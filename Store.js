@@ -171,7 +171,7 @@ for (i=0;i<buyNowBtn.length;i++){
         DownloadBtn = document.querySelector('.downloadBtn');
 
         DownloadBtn.href = URL.createObjectURL(blob);
-        DownloadBtn.download = `${username} Bill.html`;
+        DownloadBtn.download = `${username}-Bill.txt`;
 
 
         // console.log(getDiv[0].children[1].innerText); // NAME OF ITEM
