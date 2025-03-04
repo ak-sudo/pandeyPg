@@ -230,4 +230,4 @@ username = prompt('Enter your name please : ');
 if (username == null){
     username = 'User';
 }
-alert("Enjoy Shopping")
+alert(`Welcome ${username}! Enjoy Shopping...`);
