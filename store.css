@@ -282,6 +282,19 @@ body{
     margin-top: 2rem;
 }
 
+.downBil{
+    margin: 0 auto;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.8rem;
+    border: 2px solid black;
+    border-radius: 1.5rem;
+}
+
+.downBil a{
+    text-decoration: none;
+    color: black;
+}
 
 .footer{
     height: fit-content;
