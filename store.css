@@ -30,7 +30,7 @@ body{
 .logobg{
    height: 10rem;
    width: 10rem;
-   background-image: url("pgLogo.png");
+   background-image: url("logo.png");
    background-size: cover;
 }
 
@@ -282,19 +282,6 @@ body{
     margin-top: 2rem;
 }
 
-.downBil{
-    margin: 0 auto;
-    height: fit-content;
-    width: fit-content;
-    padding: 0.8rem;
-    border: 2px solid black;
-    border-radius: 1.5rem;
-}
-
-.downBil a{
-    text-decoration: none;
-    color: black;
-}
 
 .footer{
     height: fit-content;
