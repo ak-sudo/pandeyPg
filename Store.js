@@ -133,6 +133,7 @@ get_item[5].addEventListener('click', function (){
     allItems.style.height = 'fit-content';
 })
 
+
 // for stationary
 get_item[6].addEventListener('click', function (){
     btnCount++;
@@ -155,6 +156,7 @@ get_item[6].addEventListener('click', function (){
 
 
 
+
 for (i=0;i<buyNowBtn.length;i++){
     buyNowBtn[i].addEventListener('click', function (e){
 
@@ -170,12 +172,12 @@ for (i=0;i<buyNowBtn.length;i++){
 
         billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getDiv[0].children[2].children[0].innerText);
 
-        title.appendChild(listItemName);
+        title.appendChild(listItemName);    
         price.appendChild(listItemPrice);
 
 
         let billItems = [];
-        billItems.push(`\nItem Name: Amount\n`)
+        billItems.push(`\nItem Name: Amount (in ₹)\n`)
         for (let i = 0; i < title.childElementCount; i++) {
             billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
         }
@@ -199,18 +201,14 @@ for (i=0;i<buyNowBtn.length;i++){
 
         // console.log(getDiv[0].children[1].innerText); // NAME OF ITEM
         // console.log(getDiv[0].children[2].children[0].innerText); // PRICE OF ITEM  
+        return billItems;
 })
 }
 
 
-function downloadBill() {
-    link.click();
-}
-
 
 let titleol = document.querySelector('.titlelst');
 let priceol = document.querySelector('.pricelst');
-
 
 priceol.addEventListener('click', function(e){
     if(e.target.nodeName == 'I'){
@@ -227,7 +225,7 @@ priceol.addEventListener('click', function(e){
 
         let title = document.querySelector('.titlelst');
         let price = document.querySelector('.pricelst');
-        
+
         billItems.push(`\nItem Name: Amount (in ₹)\n`)
         for (let i = 0; i < title.childElementCount; i++) {
             billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
@@ -254,7 +252,6 @@ priceol.addEventListener('click', function(e){
 });
 
 
-
 function dltTitle(itemFromTop){
     for (node of titleol.children){
         if (itemFromTop == (node.offsetTop+3)){
@@ -262,6 +259,8 @@ function dltTitle(itemFromTop){
         }
     }
 }
+
+
 
 
 username = prompt('Enter your name please : ');
