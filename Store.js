@@ -133,6 +133,25 @@ get_item[5].addEventListener('click', function (){
     allItems.style.height = 'fit-content';
 })
 
+// for stationary
+get_item[6].addEventListener('click', function (){
+    btnCount++;
+    for (i=0;i<Items.length;i++){
+        if (btnCount == 1){
+            if (Items[i].id != 'stationary'){
+                Items[i].setAttribute('class','Items inactive')
+            }
+        }
+        if (btnCount == 2){
+            for (i=0;i<Items.length;i++){
+                Items[i].setAttribute('class','Items')
+            }
+            btnCount = 0;
+        }
+
+    }
+    allItems.style.height = 'fit-content';
+})
 
 
 
