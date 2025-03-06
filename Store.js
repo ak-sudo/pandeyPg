@@ -175,6 +175,12 @@ for (i=0;i<buyNowBtn.length;i++){
         title.appendChild(listItemName);    
         price.appendChild(listItemPrice);
 
+        
+        randomClass = Math.random();
+
+        listItemName.classList.add(`${randomClass}`);
+        listItemPrice.classList.add(`${randomClass}`);
+
 
         let billItems = [];
         billItems.push(`\nItem Name: Amount (in ₹)\n`)
@@ -212,11 +218,11 @@ let priceol = document.querySelector('.pricelst');
 
 priceol.addEventListener('click', function(e){
     if(e.target.nodeName == 'I'){
-        gettitle = document.querySelector('.dltliName');
-
-        getIndexLi = document.querySelectorAll('.total-content');
-        itemFromTop = e.target.offsetTop;
-        e.target.parentElement.remove(); 
+        
+        gettitle = e.target.parentElement.classList.value;
+        gettitleLi = document.getElementsByClassName(`${gettitle}`);
+        gettitleLi[0].remove()
+        e.target.parentElement.remove();   
 
         billAmt.innerText = parseInt(billAmt.innerText) - parseInt(e.target.innerText);
         dltTitle(itemFromTop);
@@ -264,19 +270,6 @@ priceol.addEventListener('click', function(e){
 
     };
 });
-
-
-
-function dltTitle(itemFromTop){
-    for (node of titleol.children){
-        if (itemFromTop == (node.offsetTop+3)){
-            node.remove();
-        }
-    }
-}
-
-
-
 
 username = prompt('Enter your name please : ');
 if (username == null){
