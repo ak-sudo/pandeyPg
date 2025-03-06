@@ -226,30 +226,45 @@ priceol.addEventListener('click', function(e){
         let title = document.querySelector('.titlelst');
         let price = document.querySelector('.pricelst');
 
-        billItems.push(`\nItem Name: Amount (in ₹)\n`)
-        for (let i = 0; i < title.childElementCount; i++) {
-            billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
+        if (title.childElementCount != 0){
+            billItems.push(`\nItem Name: Amount (in ₹)\n`)
+            for (let i = 0; i < title.childElementCount; i++) {
+                billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
+            }
+            billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+            billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+            billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+            billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+            billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+            billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+    
+            let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
+    
+            const blob = new Blob([billData], { type: "plain/text" });
+    
+            const link = document.createElement("a");
+            DownloadBtn = document.querySelector('.downloadBtn');
+    
+            DownloadBtn.href = URL.createObjectURL(blob);
+            DownloadBtn.download = `${username}-Bill.txt`;
         }
-        billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
-        billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
-        billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
-        billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
-        billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
-        billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+        else{
+            billItems.push(`Please add some items into the bills to process cheeckout!`);
+            let billData = `${username}, ${billItems.join()}`;
+    
+            const blob = new Blob([billData], { type: "plain/text" });
+    
+            const link = document.createElement("a");
+            DownloadBtn = document.querySelector('.downloadBtn');
+    
+            DownloadBtn.href = URL.createObjectURL(blob);
+            DownloadBtn.download = `Empty-Bill.txt`;
 
-        let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
-
-        const blob = new Blob([billData], { type: "plain/text" });
-
-        const link = document.createElement("a");
-        DownloadBtn = document.querySelector('.downloadBtn');
-
-        DownloadBtn.href = URL.createObjectURL(blob);
-        DownloadBtn.download = `${username}-Bill.txt`;
-
+        }
 
     };
 });
+
 
 
 function dltTitle(itemFromTop){
