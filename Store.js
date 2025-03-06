@@ -162,8 +162,12 @@ for (i=0;i<buyNowBtn.length;i++){
         }
         billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
         billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+        billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+        billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+        billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+        billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
 
-        let billData = `Bill Receipt : ${username} --------------------------${billItems.join("\n")}`;
+        let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
 
         const blob = new Blob([billData], { type: "plain/text" });
 
