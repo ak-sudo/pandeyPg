@@ -156,7 +156,7 @@ for (i=0;i<buyNowBtn.length;i++){
 
 
         let billItems = [];
-        billItems.push(`\nItem Name: Amount (in ₹)\n`)
+        billItems.push(`\nItem Name: Amount\n`)
         for (let i = 0; i < title.childElementCount; i++) {
             billItems.push(`${title.children[i].innerText} : ₹${price.children[i].innerText}`);
         }
