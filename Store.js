@@ -225,7 +225,6 @@ priceol.addEventListener('click', function(e){
         e.target.parentElement.remove();   
 
         billAmt.innerText = parseInt(billAmt.innerText) - parseInt(e.target.innerText);
-        dltTitle(itemFromTop);
 
         let billItems = [];
 
