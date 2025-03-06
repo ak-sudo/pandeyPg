@@ -188,23 +188,28 @@ function downloadBill() {
 let titleol = document.querySelector('.titlelst');
 let priceol = document.querySelector('.pricelst');
 
-titleol.addEventListener('click', function(e){
-    if(e.target.nodeName == 'I'){
-        e.target.parentElement.remove();
-    };
-    
-});
-
 priceol.addEventListener('click', function(e){
     if(e.target.nodeName == 'I'){
         gettitle = document.querySelector('.dltliName');
 
         getIndexLi = document.querySelectorAll('.total-content');
+        itemFromTop = e.target.offsetTop;
+        e.target.parentElement.remove(); 
 
-        e.target.parentElement.remove();    
         billAmt.innerText = parseInt(billAmt.innerText) - parseInt(e.target.innerText);
+        dltTitle(itemFromTop);
     };
 });
+
+
+function dltTitle(itemFromTop){
+    for (node of titleol.children){
+        if (itemFromTop == (node.offsetTop+3)){
+            node.remove();
+        }
+    }
+}
+
 
 username = prompt('Enter your name please : ');
 if (username == null){
