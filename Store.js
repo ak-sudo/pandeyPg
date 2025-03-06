@@ -146,7 +146,7 @@ for (i=0;i<buyNowBtn.length;i++){
         listItemName = document.createElement('li');
         listItemPrice = document.createElement('li');
 
-        listItemName.innerHTML = `<i class="fa-solid fa-trash dltliName"> ${getDiv[0].children[1].innerText}</i>`;
+        listItemName.innerText = getDiv[0].children[1].innerText;
         listItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${getDiv[0].children[2].children[0].innerText} </i>`;
 
         billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getDiv[0].children[2].children[0].innerText);
