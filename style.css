@@ -202,7 +202,7 @@
 .slidingFeatures{
     height:25rem;
     width: 100vw;
-    background: url(assets/slider.jpg);
+    background: url(slider.jpg);
     background-size: cover;
     display: flex;
     align-items: center;
