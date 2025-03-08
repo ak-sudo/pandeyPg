@@ -1,3 +1,8 @@
+window.addEventListener("load", () => {
+  document.querySelector('.left').classList.add('leftAnimation');
+  document.querySelector('.right').classList.add('rightAnimation');
+});
+
 let carousel = document.querySelectorAll(".slideFeature-content");
 
 let rightBtn = document.querySelector("#rightBtn");
