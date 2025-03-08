@@ -5,6 +5,10 @@
     overflow-x: hidden;
 }
 
+body{
+  scroll-behavior: smooth;
+}
+
 .footer-Text {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -41,8 +45,6 @@
     height: 100vh;
     width: 100vw;
 }
-
-
 
 .loader .left{
     position: absolute;
@@ -83,7 +85,6 @@
 .rightAnimation{
   animation: goRight 1.5s linear 0.5s; 
 }
-
 
 @keyframes goLeft{
     0%{
@@ -265,6 +266,114 @@
   cursor: pointer;
 }
 
+.usrReview{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gola{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: #505086;
+  position: absolute;
+  animation: startMoving 15s linear alternate infinite;
+  z-index: -3;
+}
+
+@keyframes startMoving {
+  25%{
+    transform: translateY(48vh) translateX(25vw);
+  }
+  50%{
+    transform: translateY(0vh) translateX(50vw);
+  }
+  75%{
+    transform: translateY(48vh) translateX(75vw);
+  }
+  100%{
+    transform: translateY(1vh) translateX(100vw);
+  }
+}
+
+.reviewForm{
+  width: 80dvw;
+  height: 50dvh;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  background-color: rgba(255,255,255,0.17);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.usrReview .reviewForm h2{
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-family: "Dangrek", sans-serif;
+}
+
+.reviewForm input:not(.user-Review){
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid black;
+  height: 3rem;
+  width: min(50rem, 69%);
+  width: 73%;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  transition: 0.5s;
+
+}
+
+.usrReview .reviewForm textarea {
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid black;
+  height: 8rem;
+  width: min(50rem, 73%);
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  backdrop-filter: blur(20px);
+  resize: none;
+}
+
+.usrReview .reviewForm .user-Name{
+  text-transform:capitalize;
+}
+
+.usrReview .reviewForm input:last-child{
+  background-color: transparent;
+  border: 1px solid black;
+  height: 3rem;
+  width: min(10rem, 30%);
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.usrReview .reviewForm input:last-child:hover{
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  box-shadow: 0 0 10px black;
+}
+
+.reviewForm:hover{
+  box-shadow: -2px 10px 10px rgba(0, 0, 0, 0.4);
+
+}
+
 .navBtn i{
   color: #F9F871;
 }
@@ -282,7 +391,7 @@
   width: 100vw;
   border: 2px solid black;
   background-color: #011111;
-  margin: 2rem 0 0 0; /*TOP LEFT BOTTOM RIGHT*/
+  margin: 0 0 0 0; /*TOP LEFT BOTTOM RIGHT*/
   color: rgb(127, 99, 48);
   overflow: hidden;
 }
@@ -506,7 +615,20 @@
     width: 100vw;
     border: 2px solid black;
     background-color: #011111;
-    margin: 2rem 0 0 0; /*TOP LEFT BOTTOM RIGHT*/
+    color: rgb(127, 99, 48);
+    overflow: hidden;
+    font-size: 0.99rem;
+  }
+  
+
+}
+
+@media (max-width:926px){
+  .footer{
+    height: 40vh;
+    width: 100vw;
+    border: 2px solid black;
+    background-color: #011111;
     color: rgb(127, 99, 48);
     overflow: hidden;
     font-size: 0.99rem;
@@ -544,5 +666,14 @@
     font-size: 0.8rem;
   }
 
+}
+
+@media (max-width: 440px) {
+  .usrReview  .reviewForm h2{ 
+    font-size: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  
 }
 
