@@ -1,3 +1,7 @@
+window.addEventListener('load', ()=>{
+    document.querySelector('#loader').classList.add('loaderHide');
+})
+
 let get_item = document.querySelectorAll('.item');
 
 let allItems = document.querySelector('.allItems');
