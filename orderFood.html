@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pandeyPg - Order Food Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="orderFood.css" />
+    <link rel="icon" href="assets/pgLogo.png" />
+</head>
+
+<body>
+    <div class="loader loader-hide">
+        <h1>🍽</h1>
+        <h4>Getting Your Table Ready.. Please Wait !!</h4>
+    </div>
+
+    <div class="container">
+        <!-- LOGO HERE -->
+        <div class="logoBg">
+            <div class="logo title">
+                <img loading="lazy" src="assets/pgLogo.png" />
+            </div>
+        </div>
+
+        <!-- NAV HERE -->
+
+        <div class="navBar navText">
+            <div class="home"><a href="index.html" class="navBar-heading"><i class="fa-solid fa-house"></i></a></div>
+            <div class="store"><a href="#" class="navBar-heading"><i class="fa-solid fa-utensils"></i> Order Your Meal</a></div>
+        </div>
+
+        <div class="categories">
+            <div class="text focusText">How Would You Like To Proceed?</div>
+            <div class="subcategory">
+
+                <div class="cateogryItem" id="breakfast">
+                    <p>Breakfast</p>
+                </div>
+
+                <div class="cateogryItem" id="lunch">
+                    <p>Lunch</p>
+                </div>
+
+                <div class="cateogryItem" id="dinner">
+                     <p>Dinner</p>
+                </div>
+
+                <div class="cateogryItem" id="fastFood">
+                    <p>Fast Food</p>
+                </div>
+
+                <div class="cateogryItem" id="drinks">
+                    <p>Drinks</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+         <div class="modal-container">
+            <div class="modal-title">
+                <h3 class="FoodItemName"></h3>
+                Select Respective Price for Half quantity/ Full Quantity
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="halfbtn">Half : <span class="halfPrice"></span></button>
+                <button type="button" class="fullbtn">Full : <span class="fullPrice"></span></button>
+            </div>
+         </div>
+
+        <!-- HEADING -->
+        <div class="menu-head">
+            <h1>OUR MENU</h1>
+        </div>
+
+        <!-- breakfast -->
+        <div class="foodType" id="breakfast"> 
+            <div class="menu-item-type-heading">
+                <h3>BREAKFAST</h3>
+            </div>
+
+            <div class="menu-body">
+
+                <input type="checkbox" id="choleBhatoore" name="Chole Bhature" value="50/90" checked />
+                <label for="choleBhatoore">
+                    <div class="menu-item" name="choleBhatoore" onclick="selectedItem('choleBhatoore')">
+                        <img loading="lazy"
+                            src="https://images.hindi.news18.com/ibnkhabar/uploads/2021/06/chole-bhature.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Chole Bhature</span>
+                                <span class="item-price">INR 50/90</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A delicious and popular North Indian dish consisting of spicy
+                                chickpeas (chole) served with deep-fried, fluffy bhature.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="cholePuri" name="Chole Puri" value="30/50" />
+                <label for="cholePuri">
+                    <div class="menu-item" name="cholePuri" onclick="selectedItem('cholePuri')">
+                        <img loading="lazy"
+                            src="https://sitaramdiwanchand.com/blog/wp-content/uploads/2024/05/Image-11-2.webp"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Chole Puri</span>
+                                <span class="item-price">INR 30/50</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A flavorful combination of spicy chickpeas (chole) paired with
+                                crispy and deep-fried puris, perfect for a fulfilling meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="lachhaParatha" name="Lachha Paratha" value="30" />
+                <label for="lachhaParatha">
+                    <div class="menu-item" name="lachhaParatha" onclick="selectedItem('lachhaParatha')">
+                        <img loading="lazy"
+                            src="https://myfoodstory.com/wp-content/uploads/2022/08/Homemade-Lachha-Paratha-3-500x500.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Lachha Paratha</span>
+                                <span class="item-price">INR 30</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A crispy and flaky multi-layered Indian flatbread, made with
+                                whole wheat flour and cooked to perfection with ghee or
+                                butter.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="paneerParatha" name="Paneer Paratha" value="40" />
+                <label for="paneerParatha">
+                    <div class="menu-item" name="paneerParatha" onclick="selectedItem('paneerParatha')">
+                        <img loading="lazy"
+                            src="https://maayeka.com/wp-content/uploads/2023/12/broccoli-paneer-paratha-recipe-a-500x375.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Paneer Paratha</span>
+                                <span class="item-price">INR 40</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A stuffed Indian flatbread filled with spiced paneer (cottage
+                                cheese), served with butter, yogurt, or pickles.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="alooParatha" name="Aloo Paratha" value="30" />
+                <label for="alooParatha">
+                    <div class="menu-item" name="alooParatha" onclick="selectedItem('alooParatha')">
+                        <img loading="lazy"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Aloo_Paratha_also_known_as_Batatay_Jo_Phulko.jpg/800px-Aloo_Paratha_also_known_as_Batatay_Jo_Phulko.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Aloo Paratha</span>
+                                <span class="item-price">INR 30</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A soft and crispy whole wheat paratha stuffed with a spiced
+                                mashed potato filling, a popular breakfast choice in North
+                                India.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="plainParatha" name="Plain Paratha" value="25" />
+                <label for="plainParatha">
+                    <div class="menu-item" name="plainParatha" onclick="selectedItem('plainParatha')">
+                        <img loading="lazy"
+                            src="https://www.vegrecipesofindia.com/wp-content/uploads/2010/06/plain-paratha-recipe-1-500x500.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Plain Paratha</span>
+                                <span class="item-price">INR 25</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A simple, flaky, and golden-brown flatbread made with whole
+                                wheat flour, cooked on a griddle with ghee or oil.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="butterRoti" name="Butter Roti" value="15" />
+                <label for="butterRoti">
+                    <div class="menu-item" name="butterRoti" onclick="selectedItem('butterRoti')">
+                        <img loading="lazy"
+                            src="https://www.cookwithmanali.com/wp-content/uploads/2021/07/Tandoori-Roti-500x500.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Butter Roti</span>
+                                <span class="item-price">INR 15</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A soft and fluffy Indian flatbread brushed with butter for a
+                                rich and delightful taste, perfect with curries and dals.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="plainRoti" name="Plain Roti" value="10" />
+                <label for="plainRoti">
+                    <div class="menu-item" name="plainRoti" onclick="selectedItem('plainRoti')">
+                        <img loading="lazy"
+                            src="https://5.imimg.com/data5/SELLER/Default/2021/10/EV/WJ/WS/4614651/vajraa-frozen-plain-roti.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Plain Roti</span>
+                                <span class="item-price">INR 10</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A simple, soft, and healthy whole wheat flatbread, a staple in
+                                Indian households and perfect with any curry.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="chilliPaneer" name="Chilli Paneer" value="45/80" />
+                <label for="chilliPaneer">
+                    <div class="menu-item" name="chilliPaneer" onclick="selectedItem('chilliPaneer')">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlxATEp1CGqHea1gWMln5jPIDjlw4yS09t2g&s"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Chilli Paneer</span>
+                                <span class="item-price">INR 45/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A spicy and tangy Indo-Chinese dish made with crispy fried
+                                paneer tossed in a flavorful chili garlic sauce.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="shahiPaneer" name="Shahi Paneer" value="55/100" />
+                <label for="shahiPaneer">
+                    <div class="menu-item" name="shahiPaneer" onclick="selectedItem('shahiPaneer')">
+                        <img loading="lazy"
+                            src="https://shwetainthekitchen.com/wp-content/uploads/2024/04/shahi-paneer.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Shahi Paneer</span>
+                                <span class="item-price">INR 55/100</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A rich and creamy North Indian dish made with paneer cooked in
+                                a flavorful, mildly spiced tomato and cashew gravy.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- lunch -->
+        <div class="foodType" id="lunch">
+            <div class="menu-item-type-heading">
+                <h3>LUNCH</h3>
+            </div>
+
+            <div class="menu-body"> <input type="checkbox" id="paneerFriedRice" name="Paneer Fried Rice" value="45/80"
+                    checked />
+                <label for="paneerFriedRice">
+                    <div class="menu-item" name="paneerFriedRice" onclick="selectedItem('paneerFriedRice')">
+                        <img loading="lazy"
+                            src="https://www.indianveggiedelight.com/wp-content/uploads/2023/09/paneer-fried-rice-featured.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Paneer Fried Rice</span>
+                                <span class="item-price">INR 45/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A delicious and protein-rich fried rice made with soft paneer cubes, aromatic spices,
+                                and perfectly cooked rice, offering a flavorful and wholesome meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="vegFriedRice" name=" Veg Fried Rice" value="35/65" />
+                <label for="vegFriedRice">
+                    <div class="menu-item" name="vegFriedRice" onclick="selectedItem('vegFriedRice')">
+                        <img loading="lazy"
+                            src="https://slurrp.club/wp-content/uploads/2022/04/DSC_0286-2-2-750x481.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Veg Fried Rice</span>
+                                <span class="item-price">INR 35/65</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A classic Indo-Chinese dish made with stir-fried vegetables, flavorful seasonings, and
+                                fragrant rice, perfect for a light yet satisfying meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="jeeraRice" name="Jeera Rice" value="30/50" />
+                <label for="jeeraRice">
+                    <div class="menu-item" name="jeeraRice" onclick="selectedItem('jeeraRice')">
+                        <img loading="lazy"
+                            src="https://myfoodstory.com/wp-content/uploads/2018/07/Perfect-Jeera-Rice-Indian-Cumin-Rice-4.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Jeera Rice</span>
+                                <span class="item-price">INR 30/50</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A fragrant and simple rice dish cooked with cumin seeds, ghee, and perfectly fluffy
+                                basmati rice, making it a great accompaniment to any curry.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="plainRice" name="Plain Rice" value="25/40" />
+                <label for="plainRice">
+                    <div class="menu-item" name="plainRice" onclick="selectedItem('plainRice')">
+                        <img loading="lazy"
+                            src="https://www.thespruceeats.com/thmb/kUoSjpktuKuTQpxkm-OFgOxl8s4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-basic-white-rice-2355883-10-5b0da96eba6177003622896e.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Plain Rice</span>
+                                <span class="item-price">INR 25/40</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Simple, soft, and fluffy steamed rice, ideal as a side dish to complement dals, curries,
+                                or any main course meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="soyabeanPaneerPulao" name="Soyabean Paneer Pulao" value="50/90" />
+                <label for="soyabeanPaneerPulao">
+                    <div class="menu-item" name="soyabeanPaneerPulao" onclick="selectedItem('soyabeanPaneerPulao')">
+                        <img loading="lazy"
+                            src="https://img.clearcals.com/recipes/01e2353f7bd4055a9c01add128b71e573e4b80c6/medium.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Soyabean Paneer Pulao</span>
+                                <span class="item-price">INR 50/90</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A protein-packed pulao made with nutritious soyabean chunks, soft paneer cubes, and
+                                aromatic basmati rice, cooked with Indian spices for a rich taste.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="vegPulao" name="Veg Pulao" value="40/75" />
+                <label for="vegPulao">
+                    <div class="menu-item" name="vegPulao" onclick="selectedItem('vegPulao')">
+                        <img loading="lazy"
+                            src="https://www.indianveggiedelight.com/wp-content/uploads/2019/07/veg-pulao-featured.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Veg Pulao</span>
+                                <span class="item-price">INR 40/75</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A flavorful one-pot dish with long-grain rice, mixed vegetables, and aromatic Indian
+                                spices, making it a delicious and wholesome meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="friedDal" name="Fried Dal" value="40/80" />
+                <label for="friedDal">
+                    <div class="menu-item" name="friedDal" onclick="selectedItem('friedDal')">
+                        <img loading="lazy"
+                            src="https://shwetainthekitchen.com/wp-content/uploads/2021/12/Dal-Fry-Recipe.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Fried Dal</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A comforting and hearty lentil dish cooked with aromatic spices, onions, tomatoes, and
+                                tempered with ghee or butter for a rich, authentic flavor.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- dinner -->
+        <div class="foodType" id="dinner">
+            <div class="menu-item-type-heading">
+                <h3>DINNER</h3>
+            </div>
+
+            <div class="menu-body">
+                <input type="checkbox" id="friedDalDinner" name="Fried Dal" value="40/80" />
+                <label for="friedDalDinner">
+                    <div class="menu-item" name="friedDalDinner" onclick="selectedItem('friedDalDinner')">
+                        <img loading="lazy"
+                            src="https://shwetainthekitchen.com/wp-content/uploads/2021/12/Dal-Fry-Recipe.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Fried Dal</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A delicious, aromatic, and protein-rich lentil dish cooked with
+                                flavorful spices, making it a perfect accompaniment to rice or roti.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="chilliPaneerDinner" name="Chilli Paneer" value="45/80" />
+                <label for="chilliPaneerDinner">
+                    <div class="menu-item" name="chilliPaneerDinner" onclick="selectedItem('chilliPaneerDinner')">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlxATEp1CGqHea1gWMln5jPIDjlw4yS09t2g&s"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Chilli Paneer</span>
+                                <span class="item-price">INR 45/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A spicy Indo-Chinese dish made with crispy paneer cubes, tossed in a
+                                flavorful sauce with bell peppers and onions.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="shahiPaneerDinner" name="Shahi Paneer" value="55/100" />
+                <label for="shahiPaneerDinner">
+                    <div class="menu-item" name="shahiPaneerDinner" onclick="selectedItem('shahiPaneerDinner')">
+                        <img loading="lazy"
+                            src="https://shwetainthekitchen.com/wp-content/uploads/2024/04/shahi-paneer.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Shahi Paneer</span>
+                                <span class="item-price">INR 55/100</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A rich and creamy paneer dish cooked in a royal, spiced tomato and
+                                cashew-based gravy, perfect for special occasions.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="plainRiceDinner" name="Plain Rice" value="25/40" />
+                <label for="plainRiceDinner">
+                    <div class="menu-item" name="plainRiceDinner" onclick="selectedItem('plainRiceDinner')">
+                        <img loading="lazy"
+                            src="https://www.thespruceeats.com/thmb/kUoSjpktuKuTQpxkm-OFgOxl8s4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-basic-white-rice-2355883-10-5b0da96eba6177003622896e.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Plain Rice</span>
+                                <span class="item-price">INR 25/40</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Steamed white rice that is light, fluffy, and the perfect base for any
+                                Indian curry or dal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="plainRotiDinner" name="Plain Roti" value="10" />
+                <label for="plainRotiDinner">
+                    <div class="menu-item" name="plainRotiDinner" onclick="selectedItem('plainRotiDinner')">
+                        <img loading="lazy"
+                            src="https://5.imimg.com/data5/SELLER/Default/2021/10/EV/WJ/WS/4614651/vajraa-frozen-plain-roti.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Plain Roti</span>
+                                <span class="item-price">INR 10</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Soft and freshly made whole wheat flatbread, a staple in Indian meals,
+                                perfect with any curry or dal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="butterRotiDinner" name="Butter Roti" value="15" />
+                <label for="butterRotiDinner">
+                    <div class="menu-item" name="butterRotiDinner" onclick="selectedItem('butterRotiDinner')">
+                        <img loading="lazy"
+                            src="https://www.cookwithmanali.com/wp-content/uploads/2021/07/Tandoori-Roti-500x500.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Butter Roti</span>
+                                <span class="item-price">INR 15</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Soft and warm whole wheat roti topped with melted butter for an
+                                irresistible flavor.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="noramlThali" name="Normal Thali" value="60" />
+                <label for="noramlThali">
+                    <div class="menu-item" name="noramlThali" onclick="selectedItem('noramlThali')">
+                        <img loading="lazy"
+                            src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-01/08/full/1704736254-7365.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Normal Thali</span>
+                                <span class="item-price">INR 60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A wholesome Indian meal with dal, sabzi, rice, roti, and salad,
+                                offering a balanced and nutritious dining experience.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="specialThali" name="Special Thali" value="120" />
+                <label for="specialThali">
+                    <div class="menu-item" name="specialThali" onclick="selectedItem('specialThali')">
+                        <img loading="lazy" src="https://5.imimg.com/data5/HW/II/SH/SELLER-9770898/veg-thali.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Special Thali</span>
+                                <span class="item-price">INR 120</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A grand Indian meal including multiple curries, dal, rice, roti,
+                                dessert, and salad, perfect for a fulfilling and royal dining
+                                experience.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+            </div>
+        </div>
+
+        <!-- fast food -->
+
+        <div class="foodType" id="fastFood">
+            <div class="menu-item-type-heading">
+                <h3>FAST FOOD</h3>
+            </div>
+
+            <div class="menu-body">
+                <input type="checkbox" id="vegChowmein" name="Veg Chowmein" value="30/60" />
+                <label for="vegChowmein">
+                    <div class="menu-item" name="vegChowmein" onclick="selectedItem('vegChowmein')">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtUNfVSuzs6Ne1OJeN6zqt_m0DZGMSdto_WA&s"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Veg Chowmein</span>
+                                <span class="item-price">INR 30/60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A delicious and spicy stir-fried noodle dish made with fresh vegetables and flavorful
+                                sauces, perfect for a quick bite.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="eggChowmein" name="Egg Chowmein" value="40/80" />
+                <label for="eggChowmein">
+                    <div class="menu-item" name="eggChowmein" onclick="selectedItem('eggChowmein')">
+                        <img loading="lazy"
+                            src="https://i.pinimg.com/736x/f2/27/8f/f2278f04253cfc13a2a498f1b60798cf.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Egg Chowmein</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A flavorful noodle dish stir-fried with eggs, vegetables, and aromatic spices, offering
+                                a rich and satisfying taste.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="paneerChowmein" name="Paneer Chowmein" value="40/80" />
+                <label for="paneerChowmein">
+                    <div class="menu-item" name="paneerChowmein" onclick="selectedItem('paneerChowmein')">
+                        <img loading="lazy"
+                            src="https://i.ytimg.com/vi/rcR1owkn9s8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDAh_o6hARjTNSC26V6L6DRM_8zZQ"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Paneer Chowmein</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A delicious fusion of soft paneer cubes stir-fried with noodles, veggies, and a mix of
+                                spicy sauces.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="chilliPotato" name="Chilli Potato" value="30/60" />
+                <label for="chilliPotato">
+                    <div class="menu-item" name="chilliPotato" onclick="selectedItem('chilliPotato')">
+                        <img loading="lazy" src="https://static.toiimg.com/photo/52532656.cms" alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Chilli Potato</span>
+                                <span class="item-price">INR 30/60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Crispy potato fries tossed in a tangy and spicy sauce, making it a perfect appetizer for
+                                spice lovers.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="honeyChilliPotato" name="Honey Chilli Potato" value="35/70" />
+                <label for="honeyChilliPotato">
+                    <div class="menu-item" name="honeyChilliPotato" onclick="selectedItem('honeyChilliPotato')">
+                        <img loading="lazy" src="https://rakskitchen.net/wp-content/uploads/2022/07/honey-chilli.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Honey Chilli Potato</span>
+                                <span class="item-price">INR 35/70</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A crispy and flavorful dish of fried potatoes coated in a sweet and spicy honey-chilli
+                                sauce.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="vegMomos" name="Veg Momos" value="35/70" />
+                <label for="vegMomos">
+                    <div class="menu-item" name="vegMomos" onclick="selectedItem('vegMomos')">
+                        <img loading="lazy"
+                            src="https://tarasmulticulturaltable.com/wp-content/uploads/2022/02/Veg-Momos-8-of-8.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Veg Momos</span>
+                                <span class="item-price">INR 35/70</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Steamed dumplings filled with a delicious mix of finely chopped vegetables and aromatic
+                                spices.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="tandooriMomos" name="Tandoori Momos" value="55/110" />
+                <label for="tandooriMomos">
+                    <div class="menu-item" name="tandooriMomos" onclick="selectedItem('tandooriMomos')">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpuM2i4Ncmji5GRdY0QDeNhIi5aAES0LXhPQ&s"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Tandoori Momos</span>
+                                <span class="item-price">INR 55/110</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Smoky and spicy dumplings grilled in a tandoor and coated with rich tandoori masala.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="macroni" name="Macroni" value="30/60" />
+                <label for="macroni">
+                    <div class="menu-item" name="macroni" onclick="selectedItem('macroni')">
+                        <img loading="lazy"
+                            src="https://i.ytimg.com/vi/FH0JAl2Okpw/maxresdefault.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Macroni</span>
+                                <span class="item-price">INR 30/60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A cheesy and creamy pasta dish cooked with fresh vegetables and a blend of flavorful
+                                herbs.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+
+                <input type="checkbox" id="pasta" name="Pasta" value="40/80" />
+                <label for="pasta">
+                    <div class="menu-item" name="pasta" onclick="selectedItem('pasta')">
+                        <img loading="lazy"
+                            src="https://www.spicebangla.com/wp-content/uploads/2024/08/Spicy-Pasta-recipe-optimised-scaled.webp"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Pasta</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A deliciously creamy and cheesy pasta dish made with fresh vegetables and a blend of
+                                aromatic herbs.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="pavBhaji" name="Pav Bhaji" value="30/60" />
+                <label for="pavBhaji">
+                    <div class="menu-item" name="pavBhaji" onclick="selectedItem('pavBhaji')">
+                        <img loading="lazy"
+                            src="https://www.cookwithmanali.com/wp-content/uploads/2018/05/Best-Pav-Bhaji-Recipe.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Pav Bhaji</span>
+                                <span class="item-price">INR 30/60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A spicy and flavorful mashed vegetable curry served with butter-toasted buns.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="dryManchurian" name="Dry Manchurian" value="30/60" />
+                <label for="dryManchurian">
+                    <div class="menu-item" name="dryManchurian" onclick="selectedItem('dryManchurian')">
+                        <img loading="lazy"
+                            src="https://www.yummytummyaarthi.com/wp-content/uploads/2022/08/veg-manchurian-1.jpeg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Dry Manchurian</span>
+                                <span class="item-price">INR 30/60</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Crispy and tangy Indo-Chinese fried vegetable balls tossed in a flavorful soy-based
+                                sauce.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="gravyManchurian" name="Gravy Manchurian" value="40/80" />
+                <label for="gravyManchurian">
+                    <div class="menu-item" name="gravyManchurian" onclick="selectedItem('gravyManchurian')">
+                        <img loading="lazy"
+                            src="https://atanurrannagharrecipe.com/wp-content/uploads/2023/01/Veg-Manchurian-for-website.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Gravy Manchurian</span>
+                                <span class="item-price">INR 40/80</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Soft and juicy vegetable Manchurian balls served in a rich, tangy, and spicy gravy.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="vegBurgur" name="Veg Burgur" value="40" />
+                <label for="vegBurgur">
+                    <div class="menu-item" name="vegBurgur" onclick="selectedItem('vegBurgur')">
+                        <img loading="lazy"
+                            src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Veg Burger</span>
+                                <span class="item-price">INR 40</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A crispy vegetable patty served in a soft bun with fresh veggies and a tangy sauce.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="paneerBurgur" name="Paneer Burgur" value="50" />
+                <label for="paneerBurgur">
+                    <div class="menu-item" name="Paneer Burgur" onclick="selectedItem('paneerBurgur')">
+                        <img loading="lazy"
+                            src="https://www.yummyfoodrecipes.com/resources/picture/org/Spicy-Paneer-Burge.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Paneer Burger</span>
+                                <span class="item-price">INR 50</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A spicy and crispy paneer patty stuffed in a soft bun with lettuce and creamy sauce.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="samosa" name="Samosa" value="10" />
+                <label for="samosa">
+                    <div class="menu-item" name="samosa" onclick="selectedItem('samosa')">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxnVgCV-6sbWMQ-OaALcEztviIakZJgzo5Jg&s"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Samosa</span>
+                                <span class="item-price">INR 10</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A crispy and golden-fried pastry stuffed with spicy mashed potatoes and peas.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="breadPakoda" name="Bread Pakoda" value="10" />
+                <label for="breadPakoda">
+                    <div class="menu-item" name="breadPakoda" onclick="selectedItem('breadPakoda')">
+                        <img loading="lazy"
+                            src="https://static.toiimg.com/photo/84629641.cms"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Bread Pakoda</span>
+                                <span class="item-price">INR 10</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                Deep-fried bread slices stuffed with spiced potato filling, coated in a crispy gram
+                                flour batter.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+
+            </div>
+        </div>
+
+        <!-- Drinks -->
+
+        <div class="foodType" id="drinks">
+            <div class="menu-item-type-heading">
+                <h3>Drinks</h3>
+            </div>
+
+            <div class="menu-body">
+
+                <input type="checkbox" id="tea" name="Tea" value="10" />
+                <label for="tea">
+                    <div class="menu-item" name="tea" onclick="selectedItem('tea')">
+                        <img loading="lazy"
+                            src="https://whittockconsulting.co.uk/wp-content/uploads/2019/10/dreamstime_xs_123605413.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Tea</span>
+                                <span class="item-price">INR 10</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A refreshing and energizing hot beverage made from brewed tea leaves, perfect for a relaxing break.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="coffee" name="Coffee" value="30" />
+                <label for="coffee">
+                    <div class="menu-item" name="coffee" onclick="selectedItem('coffee')">
+                        <img loading="lazy"
+                            src="https://www.health.com/thmb/YXxmAuCsJHtTWvSWPorjVx1F7AQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Health-GettyImages-TypesOfCoffee-b8f6f7382a1443109f74edb1050f9808.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Coffee</span>
+                                <span class="item-price">INR 30</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A rich and aromatic hot coffee, brewed to perfection for a delightful and energizing experience.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+
+                <input type="checkbox" id="coldCoffee" name="Cold Coffee" value="50" />
+                <label for="coldCoffee">
+                    <div class="menu-item" name="coldCoffee" onclick="selectedItem('coldCoffee')">
+                        <img loading="lazy"
+                            src="https://www.health.com/thmb/YXxmAuCsJHtTWvSWPorjVx1F7AQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Health-GettyImages-TypesOfCoffee-b8f6f7382a1443109f74edb1050f9808.jpg"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Cold Coffee</span>
+                                <span class="item-price">INR 50</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A smooth and creamy chilled coffee, blended to perfection for a refreshing and flavorful treat.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                
+                <input type="checkbox" id="maggi" name="Maggie" value="30" />
+                <label for="maggi">
+                    <div class="menu-item" name="maggi" onclick="selectedItem('maggi')">
+                        <img loading="lazy"
+                            src="https://www.maggi.in/sites/default/files/styles/home_stage_944_531/public/srh_recipes/f6d480af28b14b4226639ef9a4042835.jpg?h=152e3acd&itok=fHTJQ9ST"
+                            alt="food image" />
+                        <div class="menu-text-content">
+                            <h2 class="menu-text-content-heading">
+                                <span class="item-name">Maggie</span>
+                                <span class="item-price">INR 30</span>
+                            </h2>
+                            <p class="menu-text-content-text">
+                                A quick and delicious instant noodle dish, cooked with savory spices for a satisfying and tasty meal.
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+            </div>
+        </div>
+
+        <!-- Bill -->
+        <div class="total">
+            <div class="total-content">
+                <div class="title">
+                    <div class="totHeading">Item</div>
+                    <ol class="titlelst">
+
+                    </ol>
+                </div>
+                <div class="Price">
+                    <div class="totHeading">Price (in ₹)</div>
+                    <ol class="pricelst">
+
+                    </ol>
+                </div>
+            </div>
+
+            <div class="totalAmt">
+                <div class="totHeading">Total</div>
+                <div class="totAmt">0</div>
+            </div>
+            <div class="downBil"><a class="downloadBtn">Download Your Bill</a></div>
+        </div>
+
+        <!-- FOOTER HERE -->
+        <div class="footer footer-Text">
+            <div class="footer-content">
+                <div id="row1">
+                    <div class="heading">Company</div>
+                    <li>About Us</li>
+                    <li>Our services</li>
+                    <li>Privacy Policy</li>
+                    <li>Affilliate Program</li>
+                </div>
+                <div id="row2">
+                    <div class="heading">Get help</div>
+                    <li>Faq</li>
+                    <li>Shipping</li>
+                    <li>Returns</li>
+                    <li>Order Status</li>
+                </div>
+                <div id="row3">
+                    <div class="heading">Online Shopping</div>
+                    <li>Watch</li>
+                    <li>Bag</li>
+                    <li>Shoes</li>
+                    <li>Dress</li>
+                </div>
+                <div class="socailLinks">
+                    <div class="heading centerHeading">Follow Us</div>
+                    <button class="linkbtn">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </button>
+                    <button class="linkbtn">
+                        <i class="fa-brands fa-twitter"></i>
+                    </button>
+                    <button class="linkbtn">
+                        <i class="fa-brands fa-instagram"></i>
+                    </button>
+                    <button class="linkbtn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHTS HERE -->
+        <div class="copyright">Copyright A4Z &copy; 2025</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+        integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="orderFood.js"></script>
+</body>
+
+</html>
