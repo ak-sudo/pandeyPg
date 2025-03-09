@@ -67,9 +67,9 @@ intervl = setInterval(() => {
 
 }, 3000);
 
-retaurantPageNavigation = document.querySelector('#restaurant button');
-storePageNavigation = document.querySelector('#store button');
-roomPageNavigation = document.querySelector('#room button');
+retaurantPageNavigation = document.querySelector('#restaurant');
+storePageNavigation = document.querySelector('#store');
+roomPageNavigation = document.querySelector('#room');
 
 retaurantPageNavigation.addEventListener('click', function() {
     window.location.href = '/pandeyPg/orderFood.html';}
