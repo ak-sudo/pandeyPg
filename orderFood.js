@@ -337,11 +337,11 @@ getPriceLst.addEventListener('click', function(e){
 });
 
 
-username = 'User'; //Testing data;
+// username = 'User'; //Testing data;
 
-// username = prompt('Enter your name please : ');
-// if (username == null){
-//     username = 'User';
-// }
+username = prompt('Enter your name please : ');
+if (username == null){
+    username = 'User';
+}
 
-// alert(`Welcome ${username}! Enjoy Shopping...`)
+alert(`Welcome ${username}! Enjoy Shopping...`)
