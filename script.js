@@ -71,9 +71,9 @@ retaurantPageNavigation = document.querySelector('#restaurant button');
 storePageNavigation = document.querySelector('#store button');
 roomPageNavigation = document.querySelector('#room button');
 
-// retaurantPageNavigation.addEventListener('click', function() {
-//     window.location.href = '/restaurant.html';}
-// );
+retaurantPageNavigation.addEventListener('click', function() {
+    window.location.href = '/orderFood.html';}
+);
 
 storePageNavigation.addEventListener('click', function() {
     window.location.href = '/pandeyPg/store.html';}
