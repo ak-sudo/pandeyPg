@@ -258,6 +258,10 @@
 
 }
 
+.menu-item:hover{
+  transform: scale(0.8);
+}
+
 .menu-item-selected {
   border: 2px solid #fab12f;
   box-shadow: 0 0 10px #fa4032;
