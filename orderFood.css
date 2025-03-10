@@ -227,13 +227,15 @@
 .menu-item-type-heading {
   background: linear-gradient(to bottom right, #e52020, #fba518, #a89c29, #f9cb43);
   font-weight: bolder;
-  margin: 1rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
   font-size: 3rem;
   font-family: "Madimi One", sans-serif;
   border-bottom: 2px dotted #fa812f;
   color: transparent;
   background-clip: text;
   box-shadow: 0 10px 2rem #bfbfbf;
+  
 }
 
 .menu-body {
