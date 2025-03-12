@@ -126,113 +126,201 @@ menuItems.forEach((menuItem) => {
         if (menuItem.classList.value === 'menu-item menu-item-selected'){
             itemName = menuItem.childNodes[3].childNodes[1].childNodes[1].innerText;
             itemPrice = menuItem.childNodes[3].childNodes[1].childNodes[3].innerText;
-            if (itemPrice.length > 6){
-                let itemHalfPrice = itemPrice.substr(4,2);
-                let itemFullPrice = itemPrice.substr(7,3);
+            if (itemName != 'Normal Thali'){
+                if (itemName != 'Special Thali'){
+                    if (itemPrice.length > 6){
+                        let itemHalfPrice = itemPrice.substr(4,2);
+                        let itemFullPrice = itemPrice.substr(7,3);
+        
+                        let modal = document.querySelector('.modal-container');
+                        let setName = document.querySelector('.FoodItemName');
+                        setName.innerText = itemName;
+                        let getHalf = document.querySelector('.halfPrice');
+                        getHalf.innerText = itemHalfPrice;
+                        let getFull = document.querySelector('.fullPrice');
+        
+        
+                        getFull.innerText = itemFullPrice;
+                        modal.style.display = 'inline-flex';
+        
+        
+                        const halfBtn = document.querySelector('.halfbtn');
+                        const fullBtn = document.querySelector('.fullbtn');
+                        
+                        halfBtn.replaceWith(halfBtn.cloneNode(true)); // Remove previous event listeners
+                        fullBtn.replaceWith(fullBtn.cloneNode(true)); // Remove previous event listeners
+                        
+                        document.querySelector('.halfbtn').addEventListener('click', () => {
+                            orderItemName = document.createElement('li');
+                            orderItemPrice = document.createElement('li');
+                        
+                            randomClass = Math.random();
+                        
+                            orderItemName.classList.add(`${randomClass}`);
+                            orderItemPrice.classList.add(`${randomClass}`);
+                        
+                            orderItemName.innerText = itemName;
+                            orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${getHalf.innerText} </i>`;
+                        
+                            getTitleLst.appendChild(orderItemName);
+                            getPriceLst.appendChild(orderItemPrice);
+                            
+                            
+                            billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getHalf.innerText);
+                            modal.style.display = 'none';
+        
+                            let billItems = [];
+                            billItems.push(`\nItem Name: Amount (in ₹)\n`)
+                            for (let i = 0; i < getTitleLst.childElementCount; i++) {
+                                billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
+                            }
+                            billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+                            billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+                            billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+                            billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+                            billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+                            billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+                    
+                            let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
+                    
+                            const blob = new Blob([billData], { type: "plain/text" });
+                    
+                            const link = document.createElement("a");
+                            DownloadBtn = document.querySelector('.downloadBtn');
+                    
+                            DownloadBtn.href = URL.createObjectURL(blob);
+                            DownloadBtn.download = `${username}-Bill.txt`;
+                        });
+                        
+        
+                        document.querySelector('.fullbtn').addEventListener('click', () => {
+                            orderItemName = document.createElement('li');
+                            orderItemPrice = document.createElement('li');
+                        
+                            randomClass = Math.random();
+                        
+                            orderItemName.classList.add(`${randomClass}`);
+                            orderItemPrice.classList.add(`${randomClass}`);
+                        
+                            orderItemName.innerText = itemName;
+                            orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${getFull.innerText} </i>`;
+                        
+                            getTitleLst.appendChild(orderItemName);
+                            getPriceLst.appendChild(orderItemPrice);
+                            
+                            
+                            billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getFull.innerText);
+                            modal.style.display = 'none';
+        
+                            let billItems = [];
+                            billItems.push(`\nItem Name: Amount (in ₹)\n`)
+                            for (let i = 0; i < getTitleLst.childElementCount; i++) {
+                                billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
+                            }
+                            billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+                            billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+                            billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+                            billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+                            billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+                            billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+                    
+                            let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
+                    
+                            const blob = new Blob([billData], { type: "plain/text" });
+                    
+                            const link = document.createElement("a");
+                            DownloadBtn = document.querySelector('.downloadBtn');
+                    
+                            DownloadBtn.href = URL.createObjectURL(blob);
+                            DownloadBtn.download = `${username}-Bill.txt`;
+                        });
+        
+                    }
+                    else{
 
-                let modal = document.querySelector('.modal-container');
-                let setName = document.querySelector('.FoodItemName');
-                setName.innerText = itemName;
-                let getHalf = document.querySelector('.halfPrice');
-                getHalf.innerText = itemHalfPrice;
-                let getFull = document.querySelector('.fullPrice');
+                        orderItemName = document.createElement('li');
+                        orderItemPrice = document.createElement('li');
+          
+                        randomClass = Math.random();
+          
+                        orderItemName.classList.add(`${randomClass}`);
+                        orderItemPrice.classList.add(`${randomClass}`);
+          
+                        orderItemName.innerText = itemName;
+                        orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${itemPrice.substr(4,5)} </i>`;
+          
+                        getTitleLst.appendChild(orderItemName);
+                        getPriceLst.appendChild(orderItemPrice);
+          
+          
+                       billAmt.innerText = parseInt(billAmt.innerText) + parseInt(itemPrice.substr(4,5));
+          
+                       let billItems = [];
+                       billItems.push(`\nItem Name: Amount (in ₹)\n`)
+                       for (let i = 0; i < getTitleLst.childElementCount; i++) {
+                           billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
+                       }
+                       billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+                       billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+                       billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+                       billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+                       billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+                       billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+               
+                       let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
+               
+                       const blob = new Blob([billData], { type: "plain/text" });
+               
+                       const link = document.createElement("a");
+                       DownloadBtn = document.querySelector('.downloadBtn');
+               
+                       DownloadBtn.href = URL.createObjectURL(blob);
+                       DownloadBtn.download = `${username}-Bill.txt`;
+          
+                      }
+                }
+                else{
 
-
-                getFull.innerText = itemFullPrice;
-                modal.style.display = 'inline-flex';
-
-
-                const halfBtn = document.querySelector('.halfbtn');
-                const fullBtn = document.querySelector('.fullbtn');
-                
-                halfBtn.replaceWith(halfBtn.cloneNode(true)); // Remove previous event listeners
-                fullBtn.replaceWith(fullBtn.cloneNode(true)); // Remove previous event listeners
-                
-                document.querySelector('.halfbtn').addEventListener('click', () => {
                     orderItemName = document.createElement('li');
                     orderItemPrice = document.createElement('li');
-                
+      
                     randomClass = Math.random();
-                
+      
                     orderItemName.classList.add(`${randomClass}`);
                     orderItemPrice.classList.add(`${randomClass}`);
-                
+      
                     orderItemName.innerText = itemName;
-                    orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${getHalf.innerText} </i>`;
-                
+                    orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${itemPrice.substr(4,5)} </i>`;
+      
                     getTitleLst.appendChild(orderItemName);
                     getPriceLst.appendChild(orderItemPrice);
-                    
-                    
-                    billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getHalf.innerText);
-                    modal.style.display = 'none';
-
-                    let billItems = [];
-                    billItems.push(`\nItem Name: Amount (in ₹)\n`)
-                    for (let i = 0; i < getTitleLst.childElementCount; i++) {
-                        billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
-                    }
-                    billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
-                    billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
-                    billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
-                    billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
-                    billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
-                    billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
-            
-                    let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
-            
-                    const blob = new Blob([billData], { type: "plain/text" });
-            
-                    const link = document.createElement("a");
-                    DownloadBtn = document.querySelector('.downloadBtn');
-            
-                    DownloadBtn.href = URL.createObjectURL(blob);
-                    DownloadBtn.download = `${username}-Bill.txt`;
-                });
-                
-
-                document.querySelector('.fullbtn').addEventListener('click', () => {
-                    orderItemName = document.createElement('li');
-                    orderItemPrice = document.createElement('li');
-                
-                    randomClass = Math.random();
-                
-                    orderItemName.classList.add(`${randomClass}`);
-                    orderItemPrice.classList.add(`${randomClass}`);
-                
-                    orderItemName.innerText = itemName;
-                    orderItemPrice.innerHTML = `<i class="fa-solid fa-trash dltliPrice"> ${getFull.innerText} </i>`;
-                
-                    getTitleLst.appendChild(orderItemName);
-                    getPriceLst.appendChild(orderItemPrice);
-                    
-                    
-                    billAmt.innerText = parseInt(billAmt.innerText) + parseInt(getFull.innerText);
-                    modal.style.display = 'none';
-
-                    let billItems = [];
-                    billItems.push(`\nItem Name: Amount (in ₹)\n`)
-                    for (let i = 0; i < getTitleLst.childElementCount; i++) {
-                        billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
-                    }
-                    billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
-                    billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
-                    billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
-                    billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
-                    billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
-                    billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
-            
-                    let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
-            
-                    const blob = new Blob([billData], { type: "plain/text" });
-            
-                    const link = document.createElement("a");
-                    DownloadBtn = document.querySelector('.downloadBtn');
-            
-                    DownloadBtn.href = URL.createObjectURL(blob);
-                    DownloadBtn.download = `${username}-Bill.txt`;
-                });
-
+      
+      
+                   billAmt.innerText = parseInt(billAmt.innerText) + parseInt(itemPrice.substr(4,5));
+      
+                   let billItems = [];
+                   billItems.push(`\nItem Name: Amount (in ₹)\n`)
+                   for (let i = 0; i < getTitleLst.childElementCount; i++) {
+                       billItems.push(`${getTitleLst.children[i].innerText} : ₹${getPriceLst.children[i].innerText}`);
+                   }
+                   billItems.push(`\nTotal Amount To Be Paid : ₹${billAmt.innerText}\n`)
+                   billItems.push(`\nHope to see you soon ${username} 😊. Thanks for shopping with us!\n`)
+                   billItems.push(`\nAny Queries ?? Our Contact Info 👇🏻\n`)
+                   billItems.push(`Website : ak-sudo.github.io/pandeyPg/`)
+                   billItems.push(`Maid Id : contactpandeyPg@gmail.com/`)
+                   billItems.push(`Address : Aambagh near Dr. APJ Abdul Kalam Institute of Technology, Tanakpur (262309)`)
+           
+                   let billData = `Bill Receipt : ${username} \n--------------------------${billItems.join("\n")}`;
+           
+                   const blob = new Blob([billData], { type: "plain/text" });
+           
+                   const link = document.createElement("a");
+                   DownloadBtn = document.querySelector('.downloadBtn');
+           
+                   DownloadBtn.href = URL.createObjectURL(blob);
+                   DownloadBtn.download = `${username}-Bill.txt`;
+      
+                  }
             }
             else{
 
