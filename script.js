@@ -71,6 +71,10 @@ retaurantPageNavigation = document.querySelector('#restaurant');
 storePageNavigation = document.querySelector('#store');
 roomPageNavigation = document.querySelector('#room');
 
+roomPageNavigation.addEventListener('click', function() {
+  window.location.href = '/pandeyPg/maintainance.html';
+})
+
 retaurantPageNavigation.addEventListener('click', function() {
     window.location.href = '/pandeyPg/orderFood.html';}
 );
