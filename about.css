@@ -202,7 +202,9 @@ body {
   background: Linear-gradient(45deg, #9b5d95, #db6d8e, #ff8f78);
   text-align: center;
   padding: 1rem;
+  
 }
+
 
 @media (max-width: 540px) {
   .logoBg .logo img {
